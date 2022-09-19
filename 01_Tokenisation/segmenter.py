@@ -2,7 +2,7 @@ import sys
 
 line = sys.stdin.readline()
 while line != '': 
-	for c in '. ':
+	for c in '.':
 		line = line.replace(c, c+'\n')
 	sys.stdout.write(line)
-	line = sys.stdout.readline()
+	line = sys.stdin.readline()
