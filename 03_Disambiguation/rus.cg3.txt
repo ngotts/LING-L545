@@ -1,0 +1,32 @@
+DELIMITERS = "." ;
+
+LIST DET = DET ;
+LIST PUNCT = PUNCT ;
+LIST NOUN = NOUN ;
+LIST PRON = PRON ;
+LIST VERB = VERB ;
+LIST ADP = ADP ;
+LIST SCONJ = SCONJ ;
+LIST Fin = VerbForm=Fin;
+LIST Part = VerbForm=Part ;
+LIST Acc = Case=Acc ;
+LIST Nom = Case=Nom ;
+LIST Gen = Case=Gen ;
+LIST Dat = Case=Dat ;
+LIST Loc = Case=Loc ;
+LIST Plur = Number=Plur ;
+LIST Sing = Number=Sing ; 
+LIST Masc = Gender=Masc ;
+LIST Fem = Gender=Fem;
+LIST Cnd = Mood=Cnd ;
+List Inf = VerbForm=Inf;
+
+SECTION
+REMOVE DET IF (1C PUNCT) ;
+REMOVE DET IF (1C Part) ; 
+REMOVE Plur IF (0 NOUN + Fem) (-1C NOUN) (NOT -1* VERB + Plur + Fin) (NOT 1* VERB + Plur + Fin) ;
+REMOVE Cnd IF (0 SCONJ LINK 1C Inf) ;
+SELECT ADP IF (-1C VERB) (1C NOUN) ;
+
+
+

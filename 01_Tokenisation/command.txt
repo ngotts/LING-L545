@@ -1,0 +1,1 @@
+cat wiki.txt | sed 's/[^A-Za-zČčḌḍƐɛǦǧƔɣḤḥŘřṚṛṢṣṬṭẒẓ]\+/ /g' | tr ' ' '\n' | sort -f | uniq -c | sort -gr

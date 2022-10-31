@@ -1,0 +1,58 @@
+Multichar_Symbols
+
+%<n%>                ! Имя существительное, Noun
+%<pl%>               ! Множественное число, Plural
+%<nom%>              ! Именительный падеж, Nominative
+%<ins%>              ! Творительный падеж, Instrumental
+%<gen%>              ! Genitive
+%<der_лӑх%>          ! Derivation
+
+%{A%}                ! Архифонема [а] или [е], Archiphoneme [a] or [e]
+
+%{Ă%}               !Archiphoneme %{Ă%}
+%{м%}               ! Archiphoneme %{м%}
+%>                   ! Граница морфемы, Morpheme boundary
+
+LEXICON Root
+
+Nouns ;
+Guesser ;
+
+LEXICON CASES 
+%<nom%>: # ;
+%<ins%>:%>п%{A%} # ;
+%<gen%>:%>%{Ă%}н # ;
+
+LEXICON Guesser 
+🂡%<guess%>:🂡 N ;
+
+LEXICON PLURAL
+
+             CASES ;
+%<pl%>:%>се%{м%} CASES ;
+
+
+LEXICON SUBST 
+
+PLURAL ;
+
+LEXICON DER-N
+
+%<der_лӑх%>:%>л%{Ă%}х SUBST ;
+
+LEXICON N
+
+%<n%>: SUBST ;
+%<n%>: DER-N ;
+%<n%>: PLURAL ;
+
+LEXICON Nouns
+
+урам:урам N ;     ! "улица", "street"
+пахча:пахча N ;   ! "сад", "garden"
+хула:хула N ;     ! "город", "city"
+канаш:канаш N ;   ! "совет", "council"
+тӗс:тӗс N ;       ! "вид", "aspect"
+патша:патша N ;   ! "царь", "tsar"
+куҫ:куҫ N ;       ! "глаз", "eye"
+патшалӑх:патшалӑх N ;      ! "Government"

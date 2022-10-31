@@ -1,0 +1,4 @@
+all:
+	hfst-lexc avar.lexc -o avar.lexc.hfst
+	hfst-twolc avar.twol -o avar.avar.hfst
+	hfst-compose-intersect -1 avar.lexc.hfst -2 avar.twol.hfst -o avar.gen.hfst
